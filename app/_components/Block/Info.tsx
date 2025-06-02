@@ -3,10 +3,23 @@ import Image from "next/image";
 import Link from "next/link";
 
 const InfoBlock = ({
-    data,
+    data = {
+        title: "",
+        description: [],
+        image: {
+            url: "",
+            width: 0,
+            height: 0
+        },
+        button: {
+            slug: "",
+            text: "",
+            color: "",
+        }
+    },
     reversed = false
 }) => {
-    const imageLoader = ({ src }) => ( `${process.env.API_URL + src}` );
+    const imageLoader = ({ src = '' }) => ( `${process.env.API_URL + src}` );
 
     return (
         <div className={"info" + (reversed ? " info--reversed" : "")}>
