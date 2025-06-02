@@ -10,7 +10,7 @@ export async function fetchStrapiData(route: string) {
     }
 }
 
-export function formatDate(dateString) {
+export function formatDate(dateString: string | number | Date) {
     const date = new Date(dateString);
     const options = {
         year: 'numeric',
