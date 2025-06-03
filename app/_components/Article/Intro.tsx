@@ -17,14 +17,14 @@ const IntroArticle = ({
         }
     }
 }) => {
-    const [htmlContent, setHtmlContent] = useState<string>("<p>demo</p>");
+    // const [htmlContent, setHtmlContent] = useState<string>("<p>demo</p>");
 
-    useEffect(() => {
-        console.log(article.content);
-        if (typeof article.content === "string") {
-            setHtmlContent(article.content);
-        }
-    }, [article.content]);
+    // useEffect(() => {
+    //     console.log(article.content);
+    //     if (typeof article.content === "string") {
+    //         setHtmlContent(article.content);
+    //     }
+    // }, [article.content]);
 
     const imageLoader = ({ src = '' }) => ( `${process.env.API_URL + src}` );
 
@@ -38,11 +38,11 @@ const IntroArticle = ({
             <p className="copy-small2 bold">{formatDate(article.publishedAt)}</p>
             <p className="copy-small__author">By {article.author}</p>
         </div>
-            <div
+            {/* <div
                 dangerouslySetInnerHTML={{
                     __html: htmlContent
                 }}
-            />
+            /> */}
         </>
     )
 }

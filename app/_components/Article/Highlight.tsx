@@ -7,10 +7,9 @@ const HighlightArticle = ({
 }) => {
     if (!data) return;
 
-    const highLightItem = data?.find((item) => item.highlight);
+    const highLightItem = data?.find((item: { highlight: boolean; }) => item.highlight);
 
-    const imageLoader = ({ src }) => ( `${process.env.API_URL + src}` );
-
+    const imageLoader = ({ src = '' }) => ( `${process.env.API_URL + src}` );
 
     return (
         <article className="highlight-article">

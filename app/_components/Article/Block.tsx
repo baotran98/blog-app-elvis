@@ -1,16 +1,18 @@
+import HeadlineArticle from "./Headline";
+import ImageParagraphArticle from "./ImageParagraph";
 
 const BlockArticle = ({
     data
 }) => {
-    console.log(data)
+    // console.log(data)
 
     const componentType = data.__component.split("blog-article.")[1];
 
     switch (componentType) {
         case "head-line":
-            return <p>headline</p>
+            return <HeadlineArticle headline={data} />
         case "paragraph-and-image":
-            return <p>paragraph-and-image</p>
+            return <ImageParagraphArticle imageParagraph={data} />
         case "paragraph":
             return <p>paragraph</p>
         case "land-scape-image":
