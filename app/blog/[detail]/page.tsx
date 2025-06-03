@@ -12,6 +12,7 @@ export default async function BlogDetail({ params = { detail: "" } }) {
 
     // Find blog detail with the matching ID
     const blogDetail = blogArticles.data?.find((item: { slug: string; }) => item.slug === id)
+    console.log(blogDetail);
 
     return (
         <main>
